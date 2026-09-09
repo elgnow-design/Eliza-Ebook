@@ -15,7 +15,7 @@ import {
 
 export default function App() {
   // Hotmart Checkout Link
-  const CHECKOUT_URL = 'https://pay.hotmart.com/Q107544546L?checkoutMode=10';
+  const CHECKOUT_URL = 'https://pay.hotmart.com/L107544581C?checkoutMode=10';
 
   // Sticky mobile CTA visibility
   const [showStickyBar, setShowStickyBar] = useState(false);
