@@ -1,0 +1,6 @@
+{
+  "name": "CÓDIGO 777 - Camino a la Abundancia",
+  "description": "Landing page de ventas mobile-first para el reto de 21 días CÓDIGO 777: transforma tu relación con el dinero.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
