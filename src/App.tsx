@@ -23,29 +23,18 @@ export default function App() {
   // FAQ Accordion State (open question index)
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
-  // 48h Real Countdown Timer
+  // 23h Countdown Timer
   const [timeLeft, setTimeLeft] = useState({
-    hours: 47,
+    hours: 23,
     minutes: 59,
-    seconds: 45,
+    seconds: 59,
   });
 
-  // Initialize and tick countdown
+  // Initialize and tick countdown starting from 23 hours on every page entry
   useEffect(() => {
-    const STORAGE_KEY = 'codigo777_countdown_end';
-    let targetTime: number;
-    const stored = localStorage.getItem(STORAGE_KEY);
-
-    if (stored) {
-      targetTime = parseInt(stored, 10);
-      if (isNaN(targetTime) || targetTime <= Date.now()) {
-        targetTime = Date.now() + 48 * 60 * 60 * 1000;
-        localStorage.setItem(STORAGE_KEY, targetTime.toString());
-      }
-    } else {
-      targetTime = Date.now() + 48 * 60 * 60 * 1000;
-      localStorage.setItem(STORAGE_KEY, targetTime.toString());
-    }
+    localStorage.removeItem('codigo777_countdown_end');
+    const durationMs = (23 * 60 * 60 + 59 * 60 + 59) * 1000;
+    const targetTime = Date.now() + durationMs;
 
     const interval = setInterval(() => {
       const now = Date.now();
@@ -514,7 +503,7 @@ export default function App() {
             id="recibes-title"
             className="font-playfair text-2xl sm:text-3xl font-bold text-gold-gradient text-center mb-8 leading-tight"
           >
-            Todo lo que recibes hoy por $7,77
+            Todo lo que recibes hoy por $17,77
           </h2>
 
           <div className="w-full space-y-5">
@@ -681,7 +670,7 @@ export default function App() {
           </div>
         </section>
 
-        {/* 8. STACK PRECIO 107 USD -> $7,77 + COUNTDOWN 48H + CTA */}
+        {/* 8. STACK PRECIO 107 USD -> $17,77 + COUNTDOWN 23H + CTA */}
         <section
           id="stack-precio"
           className="w-full my-8 p-6 sm:p-8 rounded-3xl bg-gradient-to-b from-[#240b3b] via-[#140622] to-[#0A0A0A] border-2 border-[#D4AF37] shadow-[0_0_40px_rgba(212,175,55,0.3)] flex flex-col items-center text-center relative overflow-hidden"
@@ -700,7 +689,7 @@ export default function App() {
           <div className="flex items-baseline justify-center gap-2 mb-2">
             <span className="text-lg sm:text-xl font-light text-white/80">Hoy solo:</span>
             <span className="font-cinzel text-5xl sm:text-6xl font-black text-gold-gradient drop-shadow-[0_4px_15px_rgba(212,175,55,0.4)]">
-              $7,77
+              $17,77
             </span>
           </div>
 
@@ -708,7 +697,7 @@ export default function App() {
             (pago único • sin suscripciones ni cobros ocultos)
           </p>
 
-          {/* Countdown Real 48h */}
+          {/* Countdown Real 23h */}
           <div
             id="countdown-timer"
             className="w-full max-w-xs p-3.5 rounded-xl bg-black/60 border border-[#D4AF37]/40 mb-6 flex flex-col items-center"
@@ -791,7 +780,7 @@ export default function App() {
               id="garantia-text"
               className="text-white/85 text-sm sm:text-base leading-relaxed font-light"
             >
-              Si en 7 días sientes que no es para ti, escríbeme y te devuelvo tus $7,77. Sin preguntas.
+              Si en 7 días sientes que no es para ti, escríbeme y te devuelvo tus $17,77. Sin preguntas.
             </p>
           </div>
         </section>
@@ -937,7 +926,7 @@ export default function App() {
               rel="noopener noreferrer"
               className="btn-gold-gradient w-full py-4 px-6 rounded-xl font-bold text-base sm:text-lg text-black uppercase tracking-wider flex items-center justify-center gap-2 text-center group cursor-pointer shadow-lg"
             >
-              <span>QUIERO EL CÓDIGO 777 POR $7,77</span>
+              <span>QUIERO EL CÓDIGO 777 POR $17,77</span>
               <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
             </a>
           </div>
@@ -996,7 +985,7 @@ export default function App() {
           <div className="flex flex-col">
             <span className="text-[10px] text-white/60 uppercase leading-none">OFERTA HOY</span>
             <div className="flex items-baseline gap-1">
-              <span className="font-cinzel text-xl font-black text-[#FFD700]">$7,77</span>
+              <span className="font-cinzel text-xl font-black text-[#FFD700]">$17,77</span>
               <span className="text-[10px] line-through text-white/40">107 USD</span>
             </div>
           </div>
